@@ -13,30 +13,28 @@ main =
 
 
 -- MODEL
-
 type alias Model = {name: String}
 
 model: Model
 model = {name = ""}
 
 -- UPDATE
-
 type Msg = Reset | Change String
 
 update : Msg -> Model -> Model
 update msg model =
   case msg of
     Reset ->
-      updateText "" model
+      updateName "" model
     Change something ->
-      updateText something model
+      updateName something model
 
 
-updateText : String -> Model -> Model
-updateText msg model =
+updateName : String -> Model -> Model
+updateName msg model =
   {model | name = msg}
+  
 -- VIEW
-
 view : Model -> Html Msg
 view model =
   div [] [
