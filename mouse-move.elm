@@ -3,6 +3,9 @@ import Html.App as App
 import Mouse exposing (..)
 import String
 
+-- Commands and Subscriptions https://guide.elm-lang.org/architecture/effects/
+-- Mouse http://package.elm-lang.org/packages/elm-lang/mouse/1.0.0/Mouse
+-- Anonymous Functions https://guide.elm-lang.org/types/reading_types.html
 
 main =
   App.program
