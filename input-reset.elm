@@ -7,6 +7,7 @@ import Html.Events exposing (onClick, onInput)
 import Html.Attributes exposing (..)
 
 
+main : Program Never
 main =
     Html.beginnerProgram
         { model = model

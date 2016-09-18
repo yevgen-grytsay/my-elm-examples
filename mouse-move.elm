@@ -11,6 +11,7 @@ import String
 -- Anonymous Functions https://guide.elm-lang.org/types/reading_types.html
 
 
+main : Program Never
 main =
     App.program
         { init = init
