@@ -1,6 +1,5 @@
 module Main exposing (..)
 
-import String
 import Dict exposing (Dict)
 import Html exposing (Html, Attribute, div, text, select, option)
 import Html.App as Html
@@ -9,6 +8,7 @@ import Html.Attributes exposing (..)
 import Json.Decode as Json
 
 
+main : Program Never
 main =
     Html.beginnerProgram
         { model = model
