@@ -35,14 +35,14 @@ type alias Model =
 
 model : Model
 model =
-    { name = "Default", bands = Dict.fromList [ ( "1", "Dire Straits" ), ( "2", "Iron Maiden" ) ] }
+    { name = "Default", bands = Dict.fromList [( "1", "Dire Straits" ), ( "2", "Iron Maiden" ) ] }
 
 
 update : Msg -> Model -> Model
 update msg model =
     case msg of
         BandChange val ->
-            { model | name = val }
+            { model | name = Maybe.withDefault "None" <| Dict.get val model.bands }
 
 
 onChange : (String -> msg) -> Attribute msg
@@ -54,7 +54,7 @@ viewOptions : OptionSet -> List (Html Msg)
 viewOptions options =
     List.map
         viewOption
-        (Dict.toList options)
+        (("0", "") :: (Dict.toList options))
 
 
 viewOption : Option -> Html Msg
